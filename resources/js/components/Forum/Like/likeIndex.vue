@@ -25,7 +25,8 @@ export default{
 		this.liked = this.userLiked;
 		this.replyId = this.replyid;
 		//this.pusherListen();
-		Echo.channel('likeChannel').listen('LikeEvent', (e) => {
+		Echo.channel('likeChannel')
+		.listen('LikeEvent', (e) => {
        		 console.log(e);
     });
     		
