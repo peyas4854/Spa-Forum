@@ -8,7 +8,7 @@
 
 <p>	Single page application </p>
 
-<a href="https://spaforum12.herokuapp.com/">live demo</a>
+<a href="https://spaforum12.herokuapp.com/" target="_blank">live demo</a>
 
 
 
