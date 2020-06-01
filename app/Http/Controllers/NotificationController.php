@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 
-
-
 class NotificationController extends Controller
 {
     use Notifiable;
@@ -17,21 +15,22 @@ class NotificationController extends Controller
         $this->middleware('JWT', ['except' => ['markasread']]);
     }
 
-    public function index(){
+    public function index()
+    {
+
         return [
-          'all' => auth()->user()->notifications,
-          'read' => auth()->user()->readNotifications,
-          'unread' => auth()->user()->unreadNotifications,
+            'all' => auth()->user()->notifications,
+            'read' => auth()->user()->readNotifications,
+            'unread' => auth()->user()->unreadNotifications,
 
         ];
     }
 
-    public function markasread(Request $request){
-    	auth()->user()->notifications->where('id',$request->id)->markAsRead();
-    	//dd($request->id);
+    public function markasread(Request $request)
+    {
+        auth()->user()->notifications->where('id', $request->id)->markAsRead();
+        //dd($request->id);
 
     }
-
-
 
 }
